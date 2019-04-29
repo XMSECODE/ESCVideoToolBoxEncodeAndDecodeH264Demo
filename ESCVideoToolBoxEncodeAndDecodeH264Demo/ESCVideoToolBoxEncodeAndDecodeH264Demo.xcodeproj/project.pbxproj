@@ -1,0 +1,388 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F05D9C8E22768AA300778856 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F05D9C8D22768AA300778856 /* AppDelegate.m */; };
+		F05D9C9122768AA300778856 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F05D9C9022768AA300778856 /* ViewController.m */; };
+		F05D9C9422768AA300778856 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05D9C9222768AA300778856 /* Main.storyboard */; };
+		F05D9C9622768AAD00778856 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F05D9C9522768AAD00778856 /* Assets.xcassets */; };
+		F05D9C9922768AAD00778856 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05D9C9722768AAD00778856 /* LaunchScreen.storyboard */; };
+		F05D9C9C22768AAD00778856 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F05D9C9B22768AAD00778856 /* main.m */; };
+		F05D9CA622768C9F00778856 /* ESCSaveToH264FileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F05D9CA322768C9F00778856 /* ESCSaveToH264FileTool.m */; };
+		F05D9CA722768C9F00778856 /* ESCVideoToolboxYUVToH264EncoderTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F05D9CA422768C9F00778856 /* ESCVideoToolboxYUVToH264EncoderTool.m */; };
+		F05D9CAB22768CCD00778856 /* ESCVideoToolboxYUVToH264DecoderTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F05D9CAA22768CCD00778856 /* ESCVideoToolboxYUVToH264DecoderTool.m */; };
+		F05D9CAD2276A56100778856 /* video_1280_720.h264 in Resources */ = {isa = PBXBuildFile; fileRef = F05D9CAC2276A56000778856 /* video_1280_720.h264 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F05D9C8922768AA300778856 /* ESCVideoToolBoxEncodeAndDecodeH264Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESCVideoToolBoxEncodeAndDecodeH264Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F05D9C8C22768AA300778856 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F05D9C8D22768AA300778856 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F05D9C8F22768AA300778856 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F05D9C9022768AA300778856 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F05D9C9322768AA300778856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F05D9C9522768AAD00778856 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F05D9C9822768AAD00778856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F05D9C9A22768AAD00778856 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F05D9C9B22768AAD00778856 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F05D9CA222768C9F00778856 /* ESCVideoToolboxYUVToH264EncoderTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESCVideoToolboxYUVToH264EncoderTool.h; sourceTree = "<group>"; };
+		F05D9CA322768C9F00778856 /* ESCSaveToH264FileTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESCSaveToH264FileTool.m; sourceTree = "<group>"; };
+		F05D9CA422768C9F00778856 /* ESCVideoToolboxYUVToH264EncoderTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESCVideoToolboxYUVToH264EncoderTool.m; sourceTree = "<group>"; };
+		F05D9CA522768C9F00778856 /* ESCSaveToH264FileTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESCSaveToH264FileTool.h; sourceTree = "<group>"; };
+		F05D9CA922768CCD00778856 /* ESCVideoToolboxYUVToH264DecoderTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESCVideoToolboxYUVToH264DecoderTool.h; sourceTree = "<group>"; };
+		F05D9CAA22768CCD00778856 /* ESCVideoToolboxYUVToH264DecoderTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESCVideoToolboxYUVToH264DecoderTool.m; sourceTree = "<group>"; };
+		F05D9CAC2276A56000778856 /* video_1280_720.h264 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_1280_720.h264; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F05D9C8622768AA300778856 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F05D9C8022768AA300778856 = {
+			isa = PBXGroup;
+			children = (
+				F05D9C8B22768AA300778856 /* ESCVideoToolBoxEncodeAndDecodeH264Demo */,
+				F05D9C8A22768AA300778856 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F05D9C8A22768AA300778856 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F05D9C8922768AA300778856 /* ESCVideoToolBoxEncodeAndDecodeH264Demo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F05D9C8B22768AA300778856 /* ESCVideoToolBoxEncodeAndDecodeH264Demo */ = {
+			isa = PBXGroup;
+			children = (
+				F05D9CA822768CA600778856 /* ESCVideoToolBoxTool */,
+				F05D9C8C22768AA300778856 /* AppDelegate.h */,
+				F05D9C8D22768AA300778856 /* AppDelegate.m */,
+				F05D9C8F22768AA300778856 /* ViewController.h */,
+				F05D9C9022768AA300778856 /* ViewController.m */,
+				F05D9CAC2276A56000778856 /* video_1280_720.h264 */,
+				F05D9C9222768AA300778856 /* Main.storyboard */,
+				F05D9C9522768AAD00778856 /* Assets.xcassets */,
+				F05D9C9722768AAD00778856 /* LaunchScreen.storyboard */,
+				F05D9C9A22768AAD00778856 /* Info.plist */,
+				F05D9C9B22768AAD00778856 /* main.m */,
+			);
+			path = ESCVideoToolBoxEncodeAndDecodeH264Demo;
+			sourceTree = "<group>";
+		};
+		F05D9CA822768CA600778856 /* ESCVideoToolBoxTool */ = {
+			isa = PBXGroup;
+			children = (
+				F05D9CB12276EAF200778856 /* decode */,
+				F05D9CB02276EAE600778856 /* encode */,
+			);
+			path = ESCVideoToolBoxTool;
+			sourceTree = "<group>";
+		};
+		F05D9CB02276EAE600778856 /* encode */ = {
+			isa = PBXGroup;
+			children = (
+				F05D9CA522768C9F00778856 /* ESCSaveToH264FileTool.h */,
+				F05D9CA322768C9F00778856 /* ESCSaveToH264FileTool.m */,
+				F05D9CA222768C9F00778856 /* ESCVideoToolboxYUVToH264EncoderTool.h */,
+				F05D9CA422768C9F00778856 /* ESCVideoToolboxYUVToH264EncoderTool.m */,
+			);
+			path = encode;
+			sourceTree = "<group>";
+		};
+		F05D9CB12276EAF200778856 /* decode */ = {
+			isa = PBXGroup;
+			children = (
+				F05D9CA922768CCD00778856 /* ESCVideoToolboxYUVToH264DecoderTool.h */,
+				F05D9CAA22768CCD00778856 /* ESCVideoToolboxYUVToH264DecoderTool.m */,
+			);
+			path = decode;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F05D9C8822768AA300778856 /* ESCVideoToolBoxEncodeAndDecodeH264Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F05D9C9F22768AAD00778856 /* Build configuration list for PBXNativeTarget "ESCVideoToolBoxEncodeAndDecodeH264Demo" */;
+			buildPhases = (
+				F05D9C8522768AA300778856 /* Sources */,
+				F05D9C8622768AA300778856 /* Frameworks */,
+				F05D9C8722768AA300778856 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ESCVideoToolBoxEncodeAndDecodeH264Demo;
+			productName = ESCVideoToolBoxEncodeAndDecodeH264Demo;
+			productReference = F05D9C8922768AA300778856 /* ESCVideoToolBoxEncodeAndDecodeH264Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F05D9C8122768AA300778856 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = xiang;
+				TargetAttributes = {
+					F05D9C8822768AA300778856 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = F05D9C8422768AA300778856 /* Build configuration list for PBXProject "ESCVideoToolBoxEncodeAndDecodeH264Demo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F05D9C8022768AA300778856;
+			productRefGroup = F05D9C8A22768AA300778856 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F05D9C8822768AA300778856 /* ESCVideoToolBoxEncodeAndDecodeH264Demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F05D9C8722768AA300778856 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F05D9C9922768AAD00778856 /* LaunchScreen.storyboard in Resources */,
+				F05D9C9622768AAD00778856 /* Assets.xcassets in Resources */,
+				F05D9CAD2276A56100778856 /* video_1280_720.h264 in Resources */,
+				F05D9C9422768AA300778856 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F05D9C8522768AA300778856 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F05D9C9122768AA300778856 /* ViewController.m in Sources */,
+				F05D9CA622768C9F00778856 /* ESCSaveToH264FileTool.m in Sources */,
+				F05D9CAB22768CCD00778856 /* ESCVideoToolboxYUVToH264DecoderTool.m in Sources */,
+				F05D9C9C22768AAD00778856 /* main.m in Sources */,
+				F05D9CA722768C9F00778856 /* ESCVideoToolboxYUVToH264EncoderTool.m in Sources */,
+				F05D9C8E22768AA300778856 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F05D9C9222768AA300778856 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F05D9C9322768AA300778856 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F05D9C9722768AAD00778856 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F05D9C9822768AAD00778856 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F05D9C9D22768AAD00778856 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F05D9C9E22768AAD00778856 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F05D9CA022768AAD00778856 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NZ6KCMA9HH;
+				INFOPLIST_FILE = ESCVideoToolBoxEncodeAndDecodeH264Demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiang.ESCVideoToolBoxEncodeAndDecodeH264Demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F05D9CA122768AAD00778856 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NZ6KCMA9HH;
+				INFOPLIST_FILE = ESCVideoToolBoxEncodeAndDecodeH264Demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiang.ESCVideoToolBoxEncodeAndDecodeH264Demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F05D9C8422768AA300778856 /* Build configuration list for PBXProject "ESCVideoToolBoxEncodeAndDecodeH264Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F05D9C9D22768AAD00778856 /* Debug */,
+				F05D9C9E22768AAD00778856 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F05D9C9F22768AAD00778856 /* Build configuration list for PBXNativeTarget "ESCVideoToolBoxEncodeAndDecodeH264Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F05D9CA022768AAD00778856 /* Debug */,
+				F05D9CA122768AAD00778856 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F05D9C8122768AA300778856 /* Project object */;
+}
