@@ -152,7 +152,7 @@
                 index += 4;
                 
                 uint8_t *h264Point = (uint8_t *)[data bytes];
-                memcpy(h264data + 4, h264Point, data.length);
+                memcpy(h264data + index, h264Point, data.length);
                 
                 [self.delegate encoder:self h264Data:h264data dataLenth:data.length + 4 + self.spsData.length + self.ppsData.length];
                 free(h264data);
