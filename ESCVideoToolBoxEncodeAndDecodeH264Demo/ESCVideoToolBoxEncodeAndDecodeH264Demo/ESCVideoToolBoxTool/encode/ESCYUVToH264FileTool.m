@@ -101,7 +101,7 @@
 #pragma mark - ESCVideoToolboxYUVToH264EncoderToolDelegate
 - (void)encoder:(ESCVideoToolboxYUVToH264EncoderTool *)encoder h264Data:(void *)h264Data dataLenth:(NSInteger)lenth {
     NSData *h264data = [NSData dataWithBytes:h264Data length:lenth];
-//    NSLog(@"接收到数据");
+//    NSLog(@"接收到数据==%d",h264data.length);
     [self.fileHandle writeData:h264data];
 }
 
@@ -116,23 +116,6 @@
             }
         });
     });
-}
-
-
-+ (NSData *)readDataFromSampleBufferRef:(CMSampleBufferRef)sampleBufferRef {
-    CMBlockBufferRef dataBuffer = CMSampleBufferGetDataBuffer(sampleBufferRef);
-    return [self readDataFromBlockBuffer:dataBuffer];
-}
-
-+ (NSData *)readDataFromBlockBuffer:(CMBlockBufferRef)dataBuffer {
-    size_t length, totalLength;
-    char *dataPointer;
-    OSStatus statusCodeRet = CMBlockBufferGetDataPointer(dataBuffer, 0, &length, &totalLength, &dataPointer);
-    if (statusCodeRet == noErr) {
-        NSData* data = [[NSData alloc] initWithBytes:dataPointer length:totalLength];
-        return data;
-    }
-    return nil;
 }
 
 @end
