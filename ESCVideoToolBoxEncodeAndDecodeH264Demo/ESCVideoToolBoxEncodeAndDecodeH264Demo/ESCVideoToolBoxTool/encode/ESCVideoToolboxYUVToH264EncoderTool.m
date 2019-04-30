@@ -132,7 +132,18 @@
     self.ppsData = ppsData;
 }
 
-- (void)gotEncodedData:(NSData*)data isKeyFrame:(BOOL)isKeyFrame {
+- (void)gotEncodedData:(NSData*)data {
+    BOOL isKeyFrame = NO;
+    uint8_t typeBytes = 0;
+    [data getBytes:&typeBytes range:NSMakeRange(0, 1)];
+    int type = typeBytes & 0x1f;
+    if (type == 0x5) {
+        isKeyFrame = YES;
+    }else if(type == 0x1){
+        
+    }else {
+        return;
+    }
     if (isKeyFrame == YES) {
         if (self.spsAndPpsIsIncludedInIframe == YES) {
             if (self.delegate && [self.delegate respondsToSelector:@selector(encoder:h264Data:dataLenth:)]) {
@@ -254,7 +265,7 @@ void didCompressToH264(void *outputCallbackRefCon, void *sourceFrameRefCon, OSSt
             // 从大端转系统端
             NALUnitLength = CFSwapInt32BigToHost(NALUnitLength);
             NSData *getData = [resultData subdataWithRange:NSMakeRange(AVCCHeaderLength + bufferOffset, NALUnitLength)];
-            [encoder gotEncodedData:getData isKeyFrame:keyframe];
+            [encoder gotEncodedData:getData];
             //            NSLog(@"%lu",(unsigned long)getData.length);
             // Move to the next NAL unit in the block buffer
             bufferOffset += AVCCHeaderLength + NALUnitLength;
