@@ -30,8 +30,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)endH264Data;
 
-- (void)destroy;
-
 @end
 
 NS_ASSUME_NONNULL_END
