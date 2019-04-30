@@ -13,10 +13,11 @@
 		F05D9C9622768AAD00778856 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F05D9C9522768AAD00778856 /* Assets.xcassets */; };
 		F05D9C9922768AAD00778856 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05D9C9722768AAD00778856 /* LaunchScreen.storyboard */; };
 		F05D9C9C22768AAD00778856 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F05D9C9B22768AAD00778856 /* main.m */; };
-		F05D9CA622768C9F00778856 /* ESCSaveToH264FileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F05D9CA322768C9F00778856 /* ESCSaveToH264FileTool.m */; };
+		F05D9CA622768C9F00778856 /* ESCYUVToH264FileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F05D9CA322768C9F00778856 /* ESCYUVToH264FileTool.m */; };
 		F05D9CA722768C9F00778856 /* ESCVideoToolboxYUVToH264EncoderTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F05D9CA422768C9F00778856 /* ESCVideoToolboxYUVToH264EncoderTool.m */; };
 		F05D9CAB22768CCD00778856 /* ESCVideoToolboxYUVToH264DecoderTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F05D9CAA22768CCD00778856 /* ESCVideoToolboxYUVToH264DecoderTool.m */; };
 		F05D9CAD2276A56100778856 /* video_1280_720.h264 in Resources */ = {isa = PBXBuildFile; fileRef = F05D9CAC2276A56000778856 /* video_1280_720.h264 */; };
+		F094554522782E9B00511A84 /* ESCH264ToYUVFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F094554422782E9B00511A84 /* ESCH264ToYUVFileTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,12 +32,14 @@
 		F05D9C9A22768AAD00778856 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F05D9C9B22768AAD00778856 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F05D9CA222768C9F00778856 /* ESCVideoToolboxYUVToH264EncoderTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESCVideoToolboxYUVToH264EncoderTool.h; sourceTree = "<group>"; };
-		F05D9CA322768C9F00778856 /* ESCSaveToH264FileTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESCSaveToH264FileTool.m; sourceTree = "<group>"; };
+		F05D9CA322768C9F00778856 /* ESCYUVToH264FileTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESCYUVToH264FileTool.m; sourceTree = "<group>"; };
 		F05D9CA422768C9F00778856 /* ESCVideoToolboxYUVToH264EncoderTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESCVideoToolboxYUVToH264EncoderTool.m; sourceTree = "<group>"; };
-		F05D9CA522768C9F00778856 /* ESCSaveToH264FileTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESCSaveToH264FileTool.h; sourceTree = "<group>"; };
+		F05D9CA522768C9F00778856 /* ESCYUVToH264FileTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESCYUVToH264FileTool.h; sourceTree = "<group>"; };
 		F05D9CA922768CCD00778856 /* ESCVideoToolboxYUVToH264DecoderTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESCVideoToolboxYUVToH264DecoderTool.h; sourceTree = "<group>"; };
 		F05D9CAA22768CCD00778856 /* ESCVideoToolboxYUVToH264DecoderTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESCVideoToolboxYUVToH264DecoderTool.m; sourceTree = "<group>"; };
 		F05D9CAC2276A56000778856 /* video_1280_720.h264 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_1280_720.h264; sourceTree = "<group>"; };
+		F094554322782E9B00511A84 /* ESCH264ToYUVFileTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESCH264ToYUVFileTool.h; sourceTree = "<group>"; };
+		F094554422782E9B00511A84 /* ESCH264ToYUVFileTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESCH264ToYUVFileTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +99,8 @@
 		F05D9CB02276EAE600778856 /* encode */ = {
 			isa = PBXGroup;
 			children = (
-				F05D9CA522768C9F00778856 /* ESCSaveToH264FileTool.h */,
-				F05D9CA322768C9F00778856 /* ESCSaveToH264FileTool.m */,
+				F05D9CA522768C9F00778856 /* ESCYUVToH264FileTool.h */,
+				F05D9CA322768C9F00778856 /* ESCYUVToH264FileTool.m */,
 				F05D9CA222768C9F00778856 /* ESCVideoToolboxYUVToH264EncoderTool.h */,
 				F05D9CA422768C9F00778856 /* ESCVideoToolboxYUVToH264EncoderTool.m */,
 			);
@@ -107,6 +110,8 @@
 		F05D9CB12276EAF200778856 /* decode */ = {
 			isa = PBXGroup;
 			children = (
+				F094554322782E9B00511A84 /* ESCH264ToYUVFileTool.h */,
+				F094554422782E9B00511A84 /* ESCH264ToYUVFileTool.m */,
 				F05D9CA922768CCD00778856 /* ESCVideoToolboxYUVToH264DecoderTool.h */,
 				F05D9CAA22768CCD00778856 /* ESCVideoToolboxYUVToH264DecoderTool.m */,
 			);
@@ -185,7 +190,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F05D9C9122768AA300778856 /* ViewController.m in Sources */,
-				F05D9CA622768C9F00778856 /* ESCSaveToH264FileTool.m in Sources */,
+				F094554522782E9B00511A84 /* ESCH264ToYUVFileTool.m in Sources */,
+				F05D9CA622768C9F00778856 /* ESCYUVToH264FileTool.m in Sources */,
 				F05D9CAB22768CCD00778856 /* ESCVideoToolboxYUVToH264DecoderTool.m in Sources */,
 				F05D9C9C22768AAD00778856 /* main.m in Sources */,
 				F05D9CA722768C9F00778856 /* ESCVideoToolboxYUVToH264EncoderTool.m in Sources */,
@@ -334,6 +340,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NZ6KCMA9HH;
 				INFOPLIST_FILE = ESCVideoToolBoxEncodeAndDecodeH264Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -351,6 +358,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NZ6KCMA9HH;
 				INFOPLIST_FILE = ESCVideoToolBoxEncodeAndDecodeH264Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

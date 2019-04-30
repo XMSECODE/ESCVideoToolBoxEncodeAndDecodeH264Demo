@@ -8,8 +8,18 @@
 
 #import "ViewController.h"
 #import "ESCVideoToolboxYUVToH264DecoderTool.h"
+#import "ESCYUVToH264FileTool.h"
+#import "ESCH264ToYUVFileTool.h"
 
-@interface ViewController () <ESCVideoToolboxYUVToH264DecoderToolDelegate>
+@interface ViewController ()
+
+@property(nonatomic,copy)NSString* yuvFilePath;
+
+@property(nonatomic,copy)NSString* h264FilePath;
+
+@property(nonatomic,strong)ESCH264ToYUVFileTool* decodeFileTool;
+
+@property(nonatomic,strong)ESCYUVToH264FileTool* encodeFileTool;
 
 @end
 
@@ -18,63 +28,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSString *h264FilePath = [self getFilePathWithFileName:@"test.h264"];
+    self.h264FilePath = h264FilePath;
+    
     [self decodetest];
 }
 
+- (NSString *)getFilePathWithFileName:(NSString *)fileName {
+    NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask , YES).lastObject;
+    path = [NSString stringWithFormat:@"%@/%@",path,fileName];
+    return path;
+}
+
 - (void)decodetest {
-    NSString *h264FilePath = [[NSBundle mainBundle] pathForResource:@"video_1280_720.h264" ofType:nil];
+    NSString *yuvFilePath = [self getFilePathWithFileName:@"test.yuv"];
+    self.yuvFilePath = yuvFilePath;
     
-    NSData *h264Data = [NSData dataWithContentsOfFile:h264FilePath];
+    ESCH264ToYUVFileTool *tool = [[ESCH264ToYUVFileTool alloc] init];
     
-    ESCVideoToolboxYUVToH264DecoderTool *tool = [[ESCVideoToolboxYUVToH264DecoderTool alloc] initWithDelegate:self width:1280 height:720];
-    double startTime = CFAbsoluteTimeGetCurrent();
-    NSLog(@"%@",self);
-    @autoreleasepool {
-        uint8_t *videoData = (uint8_t *)[h264Data bytes];
-        int lastJ = 0;
-        int lastType = 0;
-        
-        for (int i = 0; i < h264Data.length; i++) {
-            //        printf("  %02x  ",videoData[i]);
-            //读取头
-            if (videoData[i] == 0x00 &&
-                videoData[i + 1] == 0x00 &&
-                videoData[i + 2] == 0x00 &&
-                videoData[i + 3] == 0x01) {
-                if (i >= 0) {
-                    uint8_t NALU = videoData[i+4];
-                    int type = NALU & 0x1f;
-                    //                NSLog(@"%d===%d",type,NALU);
-                    if (lastType == 5 || lastType == 1) {
-                        int frame_size = i - lastJ;
-                        NSData *data = [NSData dataWithBytes:&videoData[lastJ] length:frame_size];
-                        [tool decodeFrameToYUV:data];
-                        lastJ = i;
-                    }
-                    lastType = type;
-                }
-            }else if (i == h264Data.length - 1) {
-                int frame_size = i - lastJ + 1;
-                NSData *data = [NSData dataWithBytes:&videoData[lastJ] length:frame_size];
-                [tool decodeFrameToYUV:data];
-                lastJ = i;
-            }
-        }
-    }
-    [tool endH264Data];
+    NSString *h264File = [[NSBundle mainBundle] pathForResource:@"video_1280_720.h264" ofType:nil];
+    NSLog(@"开始解码");
+    [tool h264FileToYUVFileDecodeWithVideoYUVFilePath:yuvFilePath h264FilePath:h264File complete:^{
+        NSLog(@"解码完成");
+        ESCYUVToH264FileTool *encodeFileTool = [[ESCYUVToH264FileTool alloc] init];
+        self.encodeFileTool = encodeFileTool;
+        [self.encodeFileTool yuvToH264EncoderWithVideoWidth:1280 height:720 yuvFilePath:self.yuvFilePath h264FilePath:self.h264FilePath frameRate:25 complete:^{
+            NSLog(@"编码完成");
+        }];
+    }];
+    self.decodeFileTool = tool;
     
-    double endTime = CFAbsoluteTimeGetCurrent();
-    double time = endTime - startTime;
-    NSLog(@"%f",time);
-}
-
-#pragma mark - ESCVideoToolboxYUVToH264DecoderToolDelegate
-- (void)decoder:(ESCVideoToolboxYUVToH264DecoderTool *)decoder ydata:(NSData *)ydata udata:(NSData *)udata vdata:(NSData *)vdata {
-//    NSLog(@"%d===%d==%d",ydata.length,udata.length,vdata.length);
-}
-
-- (void)endDecoder {
-    NSLog(@"%@",self);
 
 }
 

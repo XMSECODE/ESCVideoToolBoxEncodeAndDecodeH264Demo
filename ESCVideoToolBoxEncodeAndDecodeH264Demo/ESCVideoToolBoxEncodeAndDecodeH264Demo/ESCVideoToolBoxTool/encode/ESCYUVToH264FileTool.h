@@ -9,18 +9,19 @@
 #import <Foundation/Foundation.h>
 #import <VideoToolbox/VideoToolbox.h>
 
-@interface ESCSaveToH264FileTool : NSObject
+@interface ESCYUVToH264FileTool : NSObject
 
 @property(nonatomic,copy)NSString* filePath;
 
 /**
  yuv文件转h264压缩文件
  */
-+ (void)yuvToH264EncoderWithVideoWidth:(NSInteger)width
+- (void)yuvToH264EncoderWithVideoWidth:(NSInteger)width
                                 height:(NSInteger)height
                            yuvFilePath:(NSString *)yuvFilePath
                           h264FilePath:(NSString *)h264FilePath
-                             frameRate:(NSInteger)frameRate;
+                             frameRate:(NSInteger)frameRate
+                              complete:(void(^)(void))complete;
 
 /**
  yuv流转h264压缩文件
@@ -35,6 +36,6 @@
  */
 - (void)encoderYUVData:(NSData *)yuvData;
 
-- (void)stopRecord;
+- (void)yuvDataIsEnd;
 
 @end

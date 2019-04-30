@@ -6,10 +6,10 @@
 //  Copyright © 2018年 xiang. All rights reserved.
 //
 
-#import "ESCSaveToH264FileTool.h"
+#import "ESCYUVToH264FileTool.h"
 #import "ESCVideoToolboxYUVToH264EncoderTool.h"
 
-@interface ESCSaveToH264FileTool () <ESCVideoToolboxYUVToH264EncoderToolDelegate>
+@interface ESCYUVToH264FileTool () <ESCVideoToolboxYUVToH264EncoderToolDelegate>
 
 @property(nonatomic,strong)ESCVideoToolboxYUVToH264EncoderTool* yuvToH264EncoderTool;
 
@@ -29,19 +29,37 @@
 
 @property(nonatomic,strong)dispatch_queue_t recordQueue;
 
+@property(nonatomic,strong)NSFileHandle* yuvDataReadFileHandle;
+
+@property(nonatomic,copy)void(^complete)(void);
+
 @end
 
-@implementation ESCSaveToH264FileTool
+@implementation ESCYUVToH264FileTool
 
 
 /**
  yuv文件转h264压缩文件
  */
-+ (void)yuvToH264EncoderWithVideoWidth:(NSInteger)width
-                                height:(NSInteger)height
-                           yuvFilePath:(NSString *)yuvFilePath
-                          h264FilePath:(NSString *)h264FilePath
-                             frameRate:(NSInteger)frameRate {
+- (void)yuvToH264EncoderWithVideoWidth:(NSInteger)width height:(NSInteger)height yuvFilePath:(NSString *)yuvFilePath h264FilePath:(NSString *)h264FilePath frameRate:(NSInteger)frameRate complete:(void(^)(void))complete {
+    
+    self.complete = complete;
+    self.yuvDataReadFileHandle = [NSFileHandle fileHandleForReadingAtPath:yuvFilePath];
+    NSInteger fileSize = [[[NSFileManager defaultManager] attributesOfItemAtPath:yuvFilePath error:nil] fileSize];
+    
+    [self setupVideoWidth:width height:height frameRate:frameRate h264FilePath:h264FilePath];
+    
+    while(1) {
+        unsigned long long  l =  [self.yuvDataReadFileHandle offsetInFile];
+        if (l >= fileSize) {
+            [self.yuvDataReadFileHandle closeFile];
+            break;
+        }
+        NSData *yuvData = [self.yuvDataReadFileHandle readDataOfLength:width * height * 3 / 2];
+        
+        [self encoderYUVData:yuvData];
+    }
+    [self yuvDataIsEnd];
     
 }
 
@@ -55,7 +73,7 @@
     self.filePath = h264FilePath;
     if (self.filePath) {
         self.recordQueue = dispatch_queue_create("recordQueue", DISPATCH_QUEUE_SERIAL);
-        dispatch_sync(self.recordQueue, ^{
+        dispatch_async(self.recordQueue, ^{
             [[NSFileManager defaultManager] removeItemAtPath:self.filePath error:nil];
             [[NSFileManager defaultManager] createFileAtPath:self.filePath contents:nil attributes:nil];
             self.fileHandle = [NSFileHandle fileHandleForWritingAtPath:self.filePath];
@@ -76,7 +94,7 @@
     [self.yuvToH264EncoderTool encoderYUVData:yuvData];
 }
 
-- (void)stopRecord {
+- (void)yuvDataIsEnd {
     [self.yuvToH264EncoderTool endYUVDataStream];
 }
 
@@ -88,10 +106,15 @@
 }
 
 - (void)encoderEnd:(ESCVideoToolboxYUVToH264EncoderTool *)encoder {
-    dispatch_sync(self.recordQueue, ^{
+    dispatch_async(self.recordQueue, ^{
         if (self.fileHandle) {
             [self.fileHandle closeFile];
         }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if(self.complete) {
+                self.complete();
+            }
+        });
     });
 }
 

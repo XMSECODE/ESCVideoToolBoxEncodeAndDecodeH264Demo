@@ -78,7 +78,7 @@
                                                  &self->_EncodingSession
                                                  );
     
-    NSLog(@"H264: VTCompressionSessionCreate %d", (int)status);
+//    NSLog(@"H264: VTCompressionSessionCreate %d", (int)status);
     if (status != 0) {
         NSLog(@"H264: Unable to create a H264 session");
         self.EncodingSession = NULL;
