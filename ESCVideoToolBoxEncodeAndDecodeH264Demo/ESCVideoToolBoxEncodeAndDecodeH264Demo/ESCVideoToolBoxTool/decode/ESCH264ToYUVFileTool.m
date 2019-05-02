@@ -7,13 +7,13 @@
 //
 
 #import "ESCH264ToYUVFileTool.h"
-#import "ESCVideoToolboxYUVToH264DecoderTool.h"
+#import "ESCVideoToolboxH264ToYUVDecoderTool.h"
 
 @interface ESCH264ToYUVFileTool ()
 
 @property(nonatomic,copy)void(^complete)(void);
 
-@property(nonatomic,strong)ESCVideoToolboxYUVToH264DecoderTool* tool;
+@property(nonatomic,strong)ESCVideoToolboxH264ToYUVDecoderTool* tool;
 
 @property(nonatomic,strong)NSFileHandle* yuvHandle;
 
@@ -36,7 +36,7 @@
     
     self.yuvHandle = [NSFileHandle fileHandleForWritingAtPath:yuvFilePath];
     
-    ESCVideoToolboxYUVToH264DecoderTool *tool = [[ESCVideoToolboxYUVToH264DecoderTool alloc] initWithDelegate:self width:1280 height:720];
+    ESCVideoToolboxH264ToYUVDecoderTool *tool = [[ESCVideoToolboxH264ToYUVDecoderTool alloc] initWithDelegate:self width:1280 height:720];
     self.tool = tool;
     @autoreleasepool {
         uint8_t *videoData = (uint8_t *)[h264Data bytes];
@@ -74,7 +74,7 @@
 }
 
 #pragma mark - ESCVideoToolboxYUVToH264DecoderToolDelegate
-- (void)decoder:(ESCVideoToolboxYUVToH264DecoderTool *)decoder ydata:(NSData *)ydata udata:(NSData *)udata vdata:(NSData *)vdata {
+- (void)decoder:(ESCVideoToolboxH264ToYUVDecoderTool *)decoder ydata:(NSData *)ydata udata:(NSData *)udata vdata:(NSData *)vdata {
     NSMutableData *yuvData = [NSMutableData dataWithData:ydata];
     [yuvData appendData:udata];
     [yuvData appendData:vdata];

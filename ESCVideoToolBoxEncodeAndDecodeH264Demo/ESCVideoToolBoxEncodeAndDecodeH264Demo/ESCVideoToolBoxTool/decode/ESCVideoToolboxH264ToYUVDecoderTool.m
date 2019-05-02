@@ -6,10 +6,10 @@
 //  Copyright © 2019 xiang. All rights reserved.
 //
 
-#import "ESCVideoToolboxYUVToH264DecoderTool.h"
+#import "ESCVideoToolboxH264ToYUVDecoderTool.h"
 #import <VideoToolbox/VideoToolbox.h>
 
-@interface ESCVideoToolboxYUVToH264DecoderTool () {
+@interface ESCVideoToolboxH264ToYUVDecoderTool () {
     CMFormatDescriptionRef  mFormatDescription;
     VTDecompressionSessionRef mDecodeSession;
     
@@ -29,7 +29,7 @@
 
 @end
 
-@implementation ESCVideoToolboxYUVToH264DecoderTool
+@implementation ESCVideoToolboxH264ToYUVDecoderTool
 
 - (instancetype)initWithDelegate:(id)delegate width:(int)width height:(int)height {
     if (self = [super init]) {

@@ -10,19 +10,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class ESCVideoToolboxYUVToH264DecoderTool;
+@class ESCVideoToolboxH264ToYUVDecoderTool;
 
-@protocol ESCVideoToolboxYUVToH264DecoderToolDelegate <NSObject>
+@protocol ESCVideoToolboxH264ToYUVDecoderToolDelegate <NSObject>
 
-- (void)decoder:(ESCVideoToolboxYUVToH264DecoderTool *)decoder ydata:(NSData *)ydata udata:(NSData *)udata vdata:(NSData *)vdata;
+- (void)decoder:(ESCVideoToolboxH264ToYUVDecoderTool *)decoder ydata:(NSData *)ydata udata:(NSData *)udata vdata:(NSData *)vdata;
 
 - (void)endDecoder;
 
 @end
 
-@interface ESCVideoToolboxYUVToH264DecoderTool : NSObject
+@interface ESCVideoToolboxH264ToYUVDecoderTool : NSObject
 
-@property (nonatomic, weak) id<ESCVideoToolboxYUVToH264DecoderToolDelegate> delegate;
+@property (nonatomic, weak) id<ESCVideoToolboxH264ToYUVDecoderToolDelegate> delegate;
 
 - (instancetype)initWithDelegate:(id)delegate width:(int)width height:(int)height;
 
