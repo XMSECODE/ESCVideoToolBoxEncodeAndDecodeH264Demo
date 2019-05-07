@@ -36,7 +36,7 @@
     
     self.yuvHandle = [NSFileHandle fileHandleForWritingAtPath:yuvFilePath];
     
-    ESCVideoToolboxH264ToYUVDecoderTool *tool = [[ESCVideoToolboxH264ToYUVDecoderTool alloc] initWithDelegate:self width:1280 height:720];
+    ESCVideoToolboxH264ToYUVDecoderTool *tool = [[ESCVideoToolboxH264ToYUVDecoderTool alloc] initWithDelegate:self];
     self.tool = tool;
     @autoreleasepool {
         uint8_t *videoData = (uint8_t *)[h264Data bytes];

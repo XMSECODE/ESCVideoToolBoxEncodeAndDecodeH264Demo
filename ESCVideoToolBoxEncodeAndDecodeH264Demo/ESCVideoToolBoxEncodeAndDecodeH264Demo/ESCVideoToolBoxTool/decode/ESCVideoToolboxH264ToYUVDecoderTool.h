@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<ESCVideoToolboxH264ToYUVDecoderToolDelegate> delegate;
 
-- (instancetype)initWithDelegate:(id)delegate width:(int)width height:(int)height;
+- (instancetype)initWithDelegate:(id)delegate;
 
 - (void)decodeFrameToYUV:(NSData *)H264Data;
 

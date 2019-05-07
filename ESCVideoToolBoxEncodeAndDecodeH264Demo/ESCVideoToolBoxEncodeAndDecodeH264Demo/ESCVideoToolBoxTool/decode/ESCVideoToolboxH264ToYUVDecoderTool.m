@@ -15,10 +15,6 @@
     
 }
 
-@property(nonatomic,assign)int width;
-
-@property(nonatomic,assign)int height;
-
 @property(nonatomic,strong)dispatch_queue_t decoderQueue;
 
 @property(nonatomic,strong)NSData* spsData;
@@ -31,11 +27,9 @@
 
 @implementation ESCVideoToolboxH264ToYUVDecoderTool
 
-- (instancetype)initWithDelegate:(id)delegate width:(int)width height:(int)height {
+- (instancetype)initWithDelegate:(id)delegate {
     if (self = [super init]) {
         self.delegate = delegate;
-        self.width = width;
-        self.height = height;
         self.decoderQueue = dispatch_queue_create("decodequeue", DISPATCH_QUEUE_SERIAL);
     }
     return self;
