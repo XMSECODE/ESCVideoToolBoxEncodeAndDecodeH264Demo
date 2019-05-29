@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ESCH264ToYUVFileTool : NSObject
 
 /**
- yuv文件转h264压缩文件
+ h264文件转yuv压缩文件
  */
 - (void)h264FileToYUVFileDecodeWithVideoYUVFilePath:(NSString *)yuvFilePath
                                        h264FilePath:(NSString *)h264FilePath
