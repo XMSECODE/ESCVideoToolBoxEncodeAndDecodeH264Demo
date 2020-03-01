@@ -65,9 +65,9 @@ typedef struct _NaluUnit
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     double w = self.view.frame.size.width;
-    double h = self.view.frame.size.height / 2;
+    double h = self.view.frame.size.height ;
     self.openglesView.frame = CGRectMake(0, 0, w, h);
-    self.h264View.frame = CGRectMake(0, h, w, h);
+//    self.h264View.frame = CGRectMake(0, h, w, h);
 }
 
 - (NSString *)getFilePathWithFileName:(NSString *)fileName {
@@ -82,7 +82,7 @@ typedef struct _NaluUnit
     
     ESCH264ToYUVFileTool *tool = [[ESCH264ToYUVFileTool alloc] init];
     
-    NSString *h264File = [[NSBundle mainBundle] pathForResource:@"video_1280_720.h264" ofType:nil];
+    NSString *h264File = [[NSBundle mainBundle] pathForResource:@"ntem.h264" ofType:nil];
     NSLog(@"开始解码");
     [tool h264FileToYUVFileDecodeWithVideoYUVFilePath:yuvFilePath h264FilePath:h264File complete:^{
         NSLog(@"解码完成");
@@ -98,7 +98,7 @@ typedef struct _NaluUnit
                                height:720
                              filePath:self.yuvFilePath];
             
-            [self ESCH264FileShowWithh264FilePath:h264File];
+//            [self ESCH264FileShowWithh264FilePath:h264File];
 
 
         }];

@@ -13,6 +13,7 @@
 		044B971422F97387002C8C00 /* vertexshader_RGB.vtsd in Resources */ = {isa = PBXBuildFile; fileRef = 044B970E22F97387002C8C00 /* vertexshader_RGB.vtsd */; };
 		044B971522F97387002C8C00 /* vertexshader_YUV.vtsd in Resources */ = {isa = PBXBuildFile; fileRef = 044B971022F97387002C8C00 /* vertexshader_YUV.vtsd */; };
 		044B971922F9765E002C8C00 /* ESCH264View.m in Sources */ = {isa = PBXBuildFile; fileRef = 044B971722F9765E002C8C00 /* ESCH264View.m */; };
+		044B971D22F97FAE002C8C00 /* ntem.h264 in Resources */ = {isa = PBXBuildFile; fileRef = 044B971C22F97FAE002C8C00 /* ntem.h264 */; };
 		F05D9C8E22768AA300778856 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F05D9C8D22768AA300778856 /* AppDelegate.m */; };
 		F05D9C9122768AA300778856 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F05D9C9022768AA300778856 /* ViewController.m */; };
 		F05D9C9422768AA300778856 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05D9C9222768AA300778856 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		044B971022F97387002C8C00 /* vertexshader_YUV.vtsd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertexshader_YUV.vtsd; sourceTree = "<group>"; };
 		044B971722F9765E002C8C00 /* ESCH264View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESCH264View.m; sourceTree = "<group>"; };
 		044B971822F9765E002C8C00 /* ESCH264View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESCH264View.h; sourceTree = "<group>"; };
+		044B971C22F97FAE002C8C00 /* ntem.h264 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ntem.h264; sourceTree = "<group>"; };
 		F05D9C8922768AA300778856 /* ESCVideoToolBoxEncodeAndDecodeH264Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESCVideoToolBoxEncodeAndDecodeH264Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F05D9C8C22768AA300778856 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F05D9C8D22768AA300778856 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				F05D9C8F22768AA300778856 /* ViewController.h */,
 				F05D9C9022768AA300778856 /* ViewController.m */,
 				F05D9CAC2276A56000778856 /* video_1280_720.h264 */,
+				044B971C22F97FAE002C8C00 /* ntem.h264 */,
 				F05D9C9222768AA300778856 /* Main.storyboard */,
 				F05D9C9522768AAD00778856 /* Assets.xcassets */,
 				F05D9C9722768AAD00778856 /* LaunchScreen.storyboard */,
@@ -214,6 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044B971D22F97FAE002C8C00 /* ntem.h264 in Resources */,
 				044B971122F97387002C8C00 /* fragmentshader_RGB.fmsd in Resources */,
 				F05D9C9922768AAD00778856 /* LaunchScreen.storyboard in Resources */,
 				F05D9C9622768AAD00778856 /* Assets.xcassets in Resources */,
