@@ -104,7 +104,7 @@ void didDecompress(void *decompressionOutputRefCon, void *sourceFrameRefCon, OSS
                     lastJ = i;
                 }
             }else if (i == H264Data.length - 1) {
-                int frame_size = i - lastJ + 1;
+                int frame_size = (int)H264Data.length - lastJ + 1;
                 [self decodeData:&videoData[lastJ] length:frame_size];
                 lastJ = i;
             }
